@@ -1,0 +1,108 @@
+html	{
+			background-color: #222277;
+			height: 100%
+		}
+
+body 	{ 
+			
+			margin-top: 1em;
+			border-style: solid;
+			border-top-left-radius: 5ex;
+			border-bottom-right-radius: 5ex;
+			border-color: darkgreen;
+			background-color: #555555;
+			padding: 2ex;
+			min-height: 100%
+     	}
+     	
+
+
+h1, h2, h3{ 
+			margin-top: 2ex;
+			margin-bottom: 0.5ex;
+			color: white;
+	  	}
+
+p 		{
+			color: white;
+			padding: 2ex;
+			margin: 2ex;
+			background-color: darkgrey;
+		}
+		
+li 		{
+			color: lightblue;
+			
+		}
+		
+hr		{
+			size: 4px;
+			color: black;
+		}		
+
+
+#icon	{
+			float: right;
+			margin-left: 2ex;
+			margin-right: 2ex;
+			background-color: #eeeeff;
+		}
+				
+		
+.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		
+	
+		
+#chart	{
+			
+			width: 90%;
+			background-color: black;
+		}
+		
+#white 	{
+			background-color: #333333;
+			border-radius: 3px;
+			border: grey;
+			padding: 2px;
+}
+
+#slider {
+  position: relative;
+  
+}
+
+#slider-tray {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  border: solid 1px #ccc;
+  border-top-color: #aaa;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  
+}
+
+#slider-handle {
+  
+  top: 3px;
+}
+
+#slider-handle-icon-down {
+  border: solid 1px #aaa;
+  position: absolute ;
+  
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+#slider-handle-icon-up {
+  border: solid 1px #aaa;
+  position: relative ;
+  
+  border-radius: 10px;
+  background-color: #fff;
+}

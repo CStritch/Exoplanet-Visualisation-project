@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <title>CSC8422 Christopher Stritch Assignment 1 page</title>
+     
+     
+  <style type="text/css">
+  
+html	{
+			background-color: #ffccaa;
+		}
+
+body 	{ 
+			margin-right: 2 em;
+			margin-left: 2em;
+			margin-top: 5em;
+			margin-bottom: 5em;
+	      
+			border-style: solid;
+			border-top-left-radius: 5ex;
+			border-bottom-right-radius: 5ex;
+			border-color: darkgreen;
+			background-color: #ffeebb;
+			padding-left: 2ex;
+			padding-top: 2em;
+			padding-bottom: 2em;
+     	}
+     	
+div 	{
+			background-color: #ffeebb;
+			margin-right: 2 em;
+			margin-left: 2em;
+			padding-right: 2em;
+		}
+
+h1, h2, h3 { 
+			margin-top: 2ex;
+			margin-bottom: 0.5ex;
+			color: black;
+	  	}
+
+hr		{
+			size: 4px;
+			color: black;
+		}
+
+
+table	{ 
+			border: 2px solid black;
+			border-right: none;
+			border-left: none;
+		}
+		
+td	{ 
+			border-top: 2px solid black;
+			border-right: 2px solid black;
+			border-left: 2px solid black;
+			
+		}		
+
+p 		{
+			margin-bottom: 1.5ex;
+			background-color: #ffeebb;
+		}
+
+
+img 	{
+			float: right;
+			margin-left: 2ex;
+			margin-right: 2ex;
+			
+		}
+		
+
+
+  
+  </style>
+  
+
+  
+  </head>
+  
+  
+  <body>
+	<div id="image"><img src="../Images/Spiral.png"/></div><br/>
+    <div> 
+	    <span>
+			<h1><u> Assignment 1</u></h1>
+		   	<p>	
+				<h2>	The data subset	</h2>
+				<ol>
+					<li><h3>	What is the subject matter of the dataset?		</h3>
+						<i>
+							The data is based on the discoveries of planets that are found, that do not orbit around our star. 
+							These planets are collectively known as exoplanets. 
+							They are collected and collated into a large CSV file with 25 headings, listed and defined under general categories. 
+							The data describes the general information of the findings, data about the planets, and data about the solar system they belong to, if applicable.
+						</i>
+					</li>
+					<li><h3>	What is the origin of the dataset -- how do you think it was generated or compiled?		</h3>
+						<i>
+							The data compilation was started in 2011 January, as per their first commit on Github. 
+							Information was compiled by hand into the CSV file from scientific sources then pushed to Github.
+							Additions are made by commits to the repository sourced from discovery sources, particularly NASA.
+							The efforts towards the database are decentralised, and community driven.
+						</i>
+					</li>
+					<li><h3>	Is any cleanup needed before it is usable in a visualisation? How would you perform the cleanup?			</h3>
+						<i>
+							There are some columns where the data pool is too small to get any useful data from. 
+							The column ‘Age’ has only two data points in over 4,000 entries, and so will be excluded with a disclaimer. 
+							Some fields have biased data, where there is a significant data pool to make a representation of the data, but not enough to avoid being potentially misleading. 
+							Finally, the time and dates need to be read in a particular order, as the field is not in the usual format.
+							<br/><br/>
+							Fields with too little data will be outright excluded, unless a reason to include them arises. 
+							Partial data will have null entries excluded, and a disclaimer produced to indicate the lack of full data set. 
+						</i>
+					</li>
+					<li><h3>	Does the data need to be pre-processed (e.g. summarised, ...) before it can be used in the visualisation that you have in mind? How would you perform that pre-processing?			</h3>
+						<i>
+							Similar to question 3, some data will need to have the null data culled to represent suitable data pools for the user, and to decrease the load on the server. 
+							This will be pre-culled and sorted into a smaller data set for the user to manipulate.
+						</i>
+					</li>
+					<li><h3>	How do you expect (at this early stage) that your visualisation application will load the dataset? E.g. database, from file, hard-coded in your javascript program, ... Why?			</h3>
+						<i>
+							The visualisation will load the data set from a database which will be at least in 3rd normalisation. 
+							This will help compile the data into useable and relevant chunks through which the user can make informed and meaningful analysis of the data. 
+							This also helps with itemising the data for visualisation, and trying to understand common links between them that may present interest.
+						</i>
+					</li>
+					<li><h3>	Can the dataset change, or is it possible that additional data is captured that can be used seamlessly in your visualisation?			</h3>
+						<i>
+							The dataset will be allowed to be changed and updated. There will be some processing of data that will prevent the integration from working seamlessly. 
+							It is expected that any addition or changes to data will be reflected to the workable data the user uses within a reasonable period, however, not immediately.
+						</i>
+					</li>
+					<li><h3>	With reference to the Week 2 lecture slides on diverse taxonomies for data, characterise the dataset in the context of these considerations.			</h3>
+						<i>
+							The data is a highly structured one, focusing on nominal comparisons after selecting specific attributes through which to limit data. 
+							The data will focus on higher level choices which filter out the majority of data, and will produce smaller unnormalized files for which to create graphical representations for.
+						</i>
+					</li>
+				</ol>
+		   	</p>
+		   	<br /><hr/><br />
+		   	<p>	
+				<h2>	Visualisation of the data		</h2>
+				<ol>
+					<li><h3>	What story will the visualisation tell?			</h3>
+						<i>
+							The visualisation will focus on the comparisons of different planets, explaining the general scope of common characteristics of planets, and uncommon characteristics through experimentation. 
+							The graphical data of the planets is expected to be incomplete, but representative of what kinds of planets exist.
+						</i>
+					</li>
+					<li><h3>	Who is the target audience?			</h3>
+						<i>
+							The target audience is expected to be in the age range of 20-35, with an interest in science and astronomy. 
+							There is anticipation that those looking at the visualisations and graphics are seeking to look at and experiment to find more answers than immediately seen on the surface.
+						</i>
+					</li>
+					<li><h3>	What questions will the visualisation help your audience to answer?			</h3>
+						<i>
+							The visualisation is expected to help answer specific, common traits for planets under varying measurements. 
+							There is anticipation that a user will want to know how many results there are and what results cause drastic changes in statistics. 
+							Users will also know how similar our solar system is in regards to other systems.
+						</i>
+					</li>
+					<li><h3>	What questions will it help the audience to raise? 			</h3>
+						<i>
+							The visualisation is expected to make the audience question if there are similarities between certain facets not covered. 
+							For example, this visualisation will focus on high-level selection, then granular correlation where there is meaningful information. 
+							They may wish to know how frequently something was dispute or contended before finalised. 
+							Some of this information is beyond the scope of the data given, but will encourage users to source their own answers.
+						</i>
+					</li>
+					<li><h3>	With reference to the Week 1 lecture slides (slides #23 - #30) on ethical issues, are there any dangers of your solution possibly misleading the audience, dependent on the method of visualisation? If so, what will you do to avoid ethical problems?			</h3>
+						<i>
+							There are several ethical issues raised. 
+							Several fields have significant amounts of null values, which will have to be culled and then a representation given off data with useable values. 
+							Because the null values do not line up across fields, there will be several visualisations which have biased information.
+							<br/><br/>
+							Disclaimers will be used where appropriate to demonstrate specific exception cases. 
+							A graph will show how much of the data is used to show the visual representation for more general cases
+						</i>
+					</li>
+					<li><h3>	Which of the following two styles do you currently plan for your solution:		</h3>	
+								<ul>
+									<li>A visualisation that contains only one view/representation, but this representation is relatively novel and creative (not your standard bar charts etc);</li>
+									<li>One that employs multiple coordinated (or linked) views where each one is a standard method (e.g. a bar chart) but they work together to tell the story.</li>
+								</ul>
+						<i>
+							The visualisation is expected to be multiple or coordinated views, linked together to let users explore and experiment with the data. 
+							This is due to the large amount of data and missing data that would otherwise skew a more detailed and singular approach.
+						</i>
+					</li>
+				</ol>
+		   	</p>
+			<br/><br/>	
+			<table>
+				<th>Project schedule</th>
+				<tr>
+					<td>18 March - 24 March </td>
+					<td>Completion of Table and normalisation. Implementation of table into server</td>
+				</tr>
+				<tr>
+					<td>25 March - 31 March </td>
+					<td>Basic graphs and understanding of suitable graphing concepts based on dataset</td>
+				</tr>
+				<tr>
+					<td>1 April - 7 April </td>
+					<td>Assignment 2 due <br/>Develop understanding of how users will interact with data</td>
+				</tr>
+				<tr>
+					<td>8 April - 14 April </td>
+					<td>Recess – catchup if behind</td>
+				</tr>
+				<tr>
+					<td>15 April - 21 April </td>
+					<td>Recess – catchup if behind</td>
+				</tr>
+				<tr>
+					<td>22 April - 28 April </td>
+					<td> Assignment 3 due – including milestone implementation</td>
+				</tr>
+				<tr>
+					<td>29 April - 5 May</td>
+					<td>Use and contemplate the design of visualisation. If not done, start working on D3 visualisation</td>
+				</tr>
+				<tr>
+					<td>6 May - 12 May </td>
+					<td>Complete input for new data into database - fix issue with website based on feedback of assignment 2 & 3 </td>
+				</tr>
+				<tr>
+					<td>13 May - 19 May </td>
+					<td>Finish design of website and finalise draft of visualisation</td>
+				</tr>
+				<tr>
+					<td>20 May - 26 May </td>
+					<td>Tweak and fix in preparation for Assignment 4</td>
+				</tr>
+				<tr>
+					<td>27 May - 2 June  </td>
+					<td>Try to finish assignment 4 before due date</td>
+				</tr>
+				<tr>
+					<td>3 June - 9 June </td>
+					<td>Assignment 4 due</td>
+				</tr>
+			</table>
+			
+    	</span>
+    </div>
+  </body>
+  
+  
+  
+  </html>
